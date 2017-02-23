@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PlusOne.Services;
+﻿using PlusOne.Services;
 using WebFormsMvp;
 
 namespace PlusOne.MVP.EventDetails
