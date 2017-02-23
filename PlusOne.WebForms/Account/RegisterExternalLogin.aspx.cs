@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
+using PlusOne.Data.Models;
 using PlusOne.WebForms.Models;
 
 namespace PlusOne.WebForms.Account

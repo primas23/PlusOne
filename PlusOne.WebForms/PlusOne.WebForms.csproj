@@ -436,6 +436,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PlusOne.Data.Models\PlusOne.Data.Models.csproj">
+      <Project>{C408266E-908C-4801-8DAB-5E6603132117}</Project>
+      <Name>PlusOne.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlusOne.Data\PlusOne.Data.csproj">
+      <Project>{15D5A48B-68C7-48A9-ABC7-CFE5F2EFF7CB}</Project>
+      <Name>PlusOne.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using PlusOne.Data.Models;
 using PlusOne.WebForms.Models;
 
 namespace PlusOne.WebForms.Account
