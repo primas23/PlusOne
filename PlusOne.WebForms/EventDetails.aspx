@@ -24,7 +24,7 @@
     </asp:FormView>
 
     <div class="back-link">
-        <a href="/events">Back to books</a>
+        <a href="/events">Back to events</a>
     </div>
 
 </asp:Content>

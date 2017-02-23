@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using PlusOne.Data.Models;
 using PlusOne.MVP.Events;
 using WebFormsMvp;
@@ -23,11 +19,16 @@ namespace PlusOne.WebForms
             return this.Model.Events;
         }
 
-        protected void LinkButtonSearch_Click(object sender, EventArgs e)
+        protected void ButtonSearch_Click(object sender, EventArgs e)
         {
-            //string textToSearchFor = this.TextBoxSearchParam.Text;
-            //string queryParam = string.IsNullOrEmpty(textToSearchFor) ? string.Empty : string.Format("?q={0}", textToSearchFor);
-            //Response.Redirect("~/search" + queryParam);
+            string eventType = this.TextBoxSearchParamEvent.Text;
+            string eventLocation = this.TextBoxSearchParamLocation.Text;
+            string eventStartData = this.TextBoxSearchParamStartData.Text;
+            string eventEndData = this.TextBoxSearchParamEndData.Text;
+
+            string queryParams = string.Format("?type={0}&location={1}&start={2}&end={3}", eventType, eventLocation, eventStartData, eventEndData);
+
+            Response.Redirect("~/search" + queryParams);
         }
     }
 }

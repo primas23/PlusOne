@@ -13,10 +13,18 @@
         <div class="search-button">
             <div class="form-search">
                 <div class="input-append">
-                    <asp:TextBox runat="server" ID="TextBoxSearchParam" type="text" name="q" class="col-md-3 search-query" placeholder="Search type event / data..."></asp:TextBox>
-                    <asp:LinkButton runat="server" ID="LinkButtonSearch"
-                        OnClick="LinkButtonSearch_Click" CssClass="btn  btn-primary" Text="Search"></asp:LinkButton>
+                    <asp:TextBox runat="server" ID="TextBoxSearchParamEvent" type="text" name="event" class="col-md-3 search-query" placeholder="Type ..."></asp:TextBox>
                 </div>
+                <div class="input-append">
+                    <asp:TextBox runat="server" ID="TextBoxSearchParamLocation" type="text" name="location" class="col-md-3 search-query" placeholder="Where ..."></asp:TextBox>
+                </div>
+                <div class="input-append">
+                    <asp:TextBox runat="server" ID="TextBoxSearchParamStartData" TextMode="Date" name="StartData" class="col-md-3 search-query"></asp:TextBox>
+                </div>
+                <div class="input-append">
+                    <asp:TextBox runat="server" ID="TextBoxSearchParamEndData" TextMode="Date" name="EndData" class="col-md-3 search-query"></asp:TextBox>
+                </div>
+                <asp:LinkButton runat="server" ID="LinkButtonSearch" OnClick="ButtonSearch_Click" CssClass="btn  btn-primary" Text="Search"></asp:LinkButton>
             </div>
         </div>
     </asp:Panel>

@@ -20,6 +20,12 @@ namespace PlusOne.Services
             return this._context.Events.OrderBy(e => e.Start).ToList();
         }
 
+        public IQueryable<Event> GetAllEventsBySearchParams(string queryType, string queryLocation , DateTime queryStart, DateTime queryEnd)
+        {
+            // TODO: Add logic
+            return this._context.Events;
+        }
+
         public Event GetById(Guid? id)
         {
             return this._context.Events.Find(id);

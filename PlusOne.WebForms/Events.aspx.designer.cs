@@ -13,13 +13,40 @@ namespace PlusOne.WebForms {
     public partial class Events {
         
         /// <summary>
-        /// TextBoxSearchParam control.
+        /// TextBoxSearchParamEvent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxSearchParam;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxSearchParamEvent;
+        
+        /// <summary>
+        /// TextBoxSearchParamLocation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxSearchParamLocation;
+        
+        /// <summary>
+        /// TextBoxSearchParamStartData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxSearchParamStartData;
+        
+        /// <summary>
+        /// TextBoxSearchParamEndData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxSearchParamEndData;
         
         /// <summary>
         /// LinkButtonSearch control.
