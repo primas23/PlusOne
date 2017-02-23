@@ -16,6 +16,11 @@ namespace PlusOne.Data
         {
         }
 
+        public IDbSet<City> Cities { get; set; }
+        public IDbSet<Event> Events{ get; set; }
+        public IDbSet<EventType> EventTypes { get; set; }
+        public IDbSet<Location> Locations { get; set; }
+        
         public static PlusOneDbContext Create()
         {
             return new PlusOneDbContext();

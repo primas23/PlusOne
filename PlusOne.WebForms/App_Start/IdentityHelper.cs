@@ -1,21 +1,6 @@
 ﻿using System;
-using System.Security.Claims;
-using System.Threading.Tasks;
 using System.Web;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using PlusOne.WebForms.Models;
 
-namespace PlusOne.WebForms.Models
-{
-    
-
-    
-}
-
-#region Helpers
 namespace PlusOne.WebForms
 {
     public static class IdentityHelper
@@ -71,4 +56,4 @@ namespace PlusOne.WebForms
         }
     }
 }
-#endregion
+
