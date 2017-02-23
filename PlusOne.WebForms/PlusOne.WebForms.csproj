@@ -184,6 +184,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EventDetails.aspx" />
+    <Content Include="Events.aspx" />
     <Content Include="About.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
@@ -270,6 +272,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventDetails.aspx.cs">
+      <DependentUpon>EventDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventDetails.aspx.designer.cs">
+      <DependentUpon>EventDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Events.aspx.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Events.aspx.designer.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\AddPhoneNumber.aspx.cs">
       <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -447,6 +463,14 @@
     <ProjectReference Include="..\PlusOne.Data\PlusOne.Data.csproj">
       <Project>{15D5A48B-68C7-48A9-ABC7-CFE5F2EFF7CB}</Project>
       <Name>PlusOne.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlusOne.MVP\PlusOne.MVP.csproj">
+      <Project>{B13CA39E-7545-4A32-B9A3-C6B34ED4B822}</Project>
+      <Name>PlusOne.MVP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlusOne.Services\PlusOne.Services.csproj">
+      <Project>{3FBBBB63-FED2-4301-895B-9F58547219A1}</Project>
+      <Name>PlusOne.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

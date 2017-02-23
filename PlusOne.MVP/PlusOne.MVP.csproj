@@ -38,9 +38,33 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WebFormsMvp, Version=1.4.5.0, Culture=neutral, PublicKeyToken=537f18701145dff0, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebFormsMvp.1.4.5.0\lib\WebFormsMvp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventDetails\EventDetailsPresenter.cs" />
+    <Compile Include="EventDetails\EventDetailsViewModel.cs" />
+    <Compile Include="EventDetails\FormGetItemsEventArgs.cs" />
+    <Compile Include="EventDetails\IEventDetailsView.cs" />
+    <Compile Include="Events\EventsPresenter.cs" />
+    <Compile Include="Events\EventsViewModel.cs" />
+    <Compile Include="Events\IEventsView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PlusOne.Data.Models\PlusOne.Data.Models.csproj">
+      <Project>{C408266E-908C-4801-8DAB-5E6603132117}</Project>
+      <Name>PlusOne.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlusOne.Services\PlusOne.Services.csproj">
+      <Project>{3FBBBB63-FED2-4301-895B-9F58547219A1}</Project>
+      <Name>PlusOne.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

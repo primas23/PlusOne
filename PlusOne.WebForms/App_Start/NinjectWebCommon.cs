@@ -1,3 +1,8 @@
+using PlusOne.Data;
+using PlusOne.Services;
+using PlusOne.WebForms.NinjectBindingsModules;
+using WebFormsMvp.Binder;
+
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(PlusOne.WebForms.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(PlusOne.WebForms.App_Start.NinjectWebCommon), "Stop")]
 
@@ -61,6 +66,12 @@ namespace PlusOne.WebForms.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Load(new MvpNinjectModule());
+
+            PresenterBinder.Factory = kernel.Get<IPresenterFactory>();
+
+            kernel.Bind<IPlusOneDbContext>().To<PlusOneDbContext>();
+            kernel.Bind<IEventService>().To<EventService>();
         }        
     }
 }
