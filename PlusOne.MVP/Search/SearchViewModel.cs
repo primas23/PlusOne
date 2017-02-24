@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+
 using PlusOne.Data.Models;
 
 namespace PlusOne.MVP.Search

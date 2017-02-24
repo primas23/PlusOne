@@ -4,6 +4,6 @@ namespace PlusOne.MVP.EventDetails
 {
     public class EventDetailsViewModel
     {
-        public Event Event { get; set; }
+        public virtual Event Event { get; set; }
     }
 }

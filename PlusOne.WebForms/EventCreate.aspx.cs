@@ -10,7 +10,7 @@ namespace PlusOne.WebForms
     [PresenterBinding(typeof(EventCreatePresenter))]
     public partial class EventCreate : MvpPage<EventCreateViewModel>, IEventCreateView
     {
-        public event EventHandler<EventCreateEventArgs> OnGetEventTypes;
+        public event EventHandler OnGetEventTypes;
         public event EventHandler<IdEventArgs> OnEventCreate;
 
         protected void Page_Load(object sender, EventArgs e)

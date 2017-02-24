@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+
 using PlusOne.Data;
 using PlusOne.Data.Models;
 
@@ -89,7 +89,7 @@ namespace PlusOne.Services
                 eventToPopulatEvent.Participants.Add(user);
             }
 
-            return _context.SaveChanges();
+            return this._context.SaveChanges();
         }
 
         public int RemoveParticipant(Guid eventId, string userId)
@@ -102,7 +102,7 @@ namespace PlusOne.Services
                 eventToPopulatEvent.Participants.Remove(user);
             }
 
-            return _context.SaveChanges();
+            return this._context.SaveChanges();
         }
 
         public int DeleteEvent(Guid id)
@@ -122,6 +122,4 @@ namespace PlusOne.Services
             return this._context.SaveChanges();
         }
     }
-
-
 }

@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+
 using PlusOne.Data.Models;
 
 namespace PlusOne.Data

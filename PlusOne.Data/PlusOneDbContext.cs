@@ -1,5 +1,7 @@
 ﻿using System.Data.Entity;
+
 using Microsoft.AspNet.Identity.EntityFramework;
+
 using PlusOne.Data.Models;
 
 namespace PlusOne.Data

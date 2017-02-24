@@ -1,6 +1,8 @@
-﻿using PlusOne.Data.Models;
-using PlusOne.Services;
+﻿using System;
 using WebFormsMvp;
+
+using PlusOne.Data.Models;
+using PlusOne.Services;
 
 namespace PlusOne.MVP.EventCreate
 {
@@ -19,7 +21,7 @@ namespace PlusOne.MVP.EventCreate
             this.View.OnEventCreate += this.View_OnEventCreate;
         }
 
-        private void View_OnGetEventTypes(object sender, EventCreateEventArgs e)
+        private void View_OnGetEventTypes(object sender, EventArgs eventArgs)
         {
             this.View.Model.EventTypes = this._eventTypeService.GetAllEventTypes();
         }

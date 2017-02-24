@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlusOne.Services", "PlusOne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlusOne.MVP", "PlusOne.MVP\PlusOne.MVP.csproj", "{B13CA39E-7545-4A32-B9A3-C6B34ED4B822}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlusOne.Test", "PlusOne.Test\PlusOne.Test.csproj", "{0A925FFE-1A38-4205-9CCE-366226087D0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlusOne.Common", "PlusOne.Common\PlusOne.Common.csproj", "{6B1457B4-C076-4473-848F-B052B48666F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{B13CA39E-7545-4A32-B9A3-C6B34ED4B822}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B13CA39E-7545-4A32-B9A3-C6B34ED4B822}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B13CA39E-7545-4A32-B9A3-C6B34ED4B822}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A925FFE-1A38-4205-9CCE-366226087D0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A925FFE-1A38-4205-9CCE-366226087D0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A925FFE-1A38-4205-9CCE-366226087D0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A925FFE-1A38-4205-9CCE-366226087D0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B1457B4-C076-4473-848F-B052B48666F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B1457B4-C076-4473-848F-B052B48666F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B1457B4-C076-4473-848F-B052B48666F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B1457B4-C076-4473-848F-B052B48666F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

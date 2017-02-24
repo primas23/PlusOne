@@ -1,13 +1,18 @@
 ﻿using System;
-using PlusOne.MVP.EventDetails;
+using System.Web.ModelBinding;
+
 using WebFormsMvp;
 
 namespace PlusOne.MVP.EventCreate
 {
     public interface IEventCreateView : IView<EventCreateViewModel>
     {
-        event EventHandler<EventCreateEventArgs> OnGetEventTypes;
+        event EventHandler OnGetEventTypes;
 
         event EventHandler<IdEventArgs> OnEventCreate;
+
+        ModelStateDictionary ModelState { get; }
+
+        bool TryUpdateModel<TModel>(TModel model) where TModel : class;
     }
 }

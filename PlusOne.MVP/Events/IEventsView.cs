@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Web.ModelBinding;
-using PlusOne.MVP.EditEvents;
-using PlusOne.MVP.EventCreate;
+
 using WebFormsMvp;
+
+using PlusOne.MVP.EventCreate;
 
 namespace PlusOne.MVP.Events
 {

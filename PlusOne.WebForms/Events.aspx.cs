@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using PlusOne.Data.Models;
-using PlusOne.MVP.EditEvents;
 using PlusOne.MVP.EventCreate;
 using PlusOne.MVP.Events;
 using WebFormsMvp;

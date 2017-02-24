@@ -1,5 +1,6 @@
-﻿using PlusOne.Services;
-using WebFormsMvp;
+﻿using WebFormsMvp;
+
+using PlusOne.Services;
 
 namespace PlusOne.MVP.Search
 {
