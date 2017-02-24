@@ -59,14 +59,19 @@
         <ItemTemplate>
             <tr>
                 <td>
-                    <asp:HyperLink 
-                        NavigateUrl='<%# string.Format("~/eventdetails.aspx?id={0}", Item.Id) %>' 
-                        runat="server" 
+                    <asp:HyperLink
+                        NavigateUrl='<%# string.Format("~/eventdetails.aspx?id={0}", Item.Id) %>'
+                        runat="server"
                         Text='<%# string.Format(@"""{0}"" at <i>{1}</i> <b>{2}</b>", Item.Type.Name,Item.Start.ToShortDateString(), Item.Start.ToLongTimeString()) %>' />
                 </td>
             </tr>
         </ItemTemplate>
     </asp:ListView>
 
+    <asp:HyperLink
+        NavigateUrl='<%# string.Format("~/myevents.aspx?id={0}", this.Context.User.Identity.GetUserId()) %>'
+        runat="server"
+        CssClass="btn btn-default"
+        Text='My events' />
 
 </asp:Content>

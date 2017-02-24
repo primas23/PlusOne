@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -18,6 +19,7 @@ namespace PlusOne.Data.Models
 
         public string LastName { get; set; }
 
+        [InverseProperty("Participants")]
         public virtual ICollection<Event> Events { get; set; }
 
         public ClaimsIdentity GenerateUserIdentity(UserManager<ApplicationUser> manager)

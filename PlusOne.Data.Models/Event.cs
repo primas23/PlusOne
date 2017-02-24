@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PlusOne.Data.Models
 {
@@ -8,7 +10,7 @@ namespace PlusOne.Data.Models
         public Event()
         {
             this.Id = Guid.NewGuid();
-            this.Users = new HashSet<ApplicationUser>();
+            this.Participants = new HashSet<ApplicationUser>();
             this.CreatedOn = DateTime.Now;
         }
 
@@ -22,16 +24,20 @@ namespace PlusOne.Data.Models
 
         public string Comments { get; set; }
 
+        public int MaxParticipants { get; set; }
+
         public Guid TypeId { get; set; }
 
         public virtual EventType Type { get; set; }
 
+        public Guid LocationId { get; set; }
+
         public virtual Location Location { get; set; }
 
-        public Guid ApplicationUserId { get; set; }
+        public string OwnerId { get; set; }
 
-        public virtual ApplicationUser ApplicationUser { get; set; }
+        public virtual ApplicationUser Owner { get; set; }
 
-        public virtual ICollection<ApplicationUser> Users { get; set; }
+        public virtual ICollection<ApplicationUser> Participants { get; set; }
     }
 }

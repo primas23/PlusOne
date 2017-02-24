@@ -1,8 +1,6 @@
-﻿using System;
-using PlusOne.Data.Models;
+﻿using PlusOne.Data.Models;
 using PlusOne.Services;
 using WebFormsMvp;
-using Microsoft.AspNet.Identity;
 
 namespace PlusOne.MVP.EventCreate
 {
@@ -40,7 +38,7 @@ namespace PlusOne.MVP.EventCreate
                     Longitude = this.View.Model.Longitude,
                     Latitude = this.View.Model.Latitude
                 },
-                ApplicationUserId = e.Id
+                OwnerId = e.Id.ToString()
             };
 
             this._eventService.InsertEvent(eventToinsertEvent);

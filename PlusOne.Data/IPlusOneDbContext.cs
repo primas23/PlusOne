@@ -11,6 +11,8 @@ namespace PlusOne.Data
 
         IDbSet<Location> Locations { get; set; }
 
+        IDbSet<ApplicationUser> Users { get; set; }
+
         int SaveChanges();
     }
 }

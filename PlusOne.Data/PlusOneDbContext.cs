@@ -16,10 +16,20 @@ namespace PlusOne.Data
         public IDbSet<EventType> EventTypes { get; set; }
 
         public IDbSet<Location> Locations { get; set; }
-        
+
         public static PlusOneDbContext Create()
         {
             return new PlusOneDbContext();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Event>().
+                HasMany(c => c.Participants);
+            modelBuilder.Entity<ApplicationUser>().
+                HasMany(c => c.Events);
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

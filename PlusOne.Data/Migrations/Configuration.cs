@@ -56,7 +56,8 @@ namespace PlusOne.Data.Migrations
                 Location = footbalLoc,
                 Start = DateTime.Now,
                 End = DateTime.Now.AddDays(1),
-                Type = futbolType
+                Type = futbolType,
+                MaxParticipants = 5
             };
 
             var golfEvent = new Event()
@@ -64,7 +65,8 @@ namespace PlusOne.Data.Migrations
                 Location = golflLoc,
                 Start = DateTime.Now,
                 End = DateTime.Now.AddDays(2),
-                Type = golfType
+                Type = golfType,
+                MaxParticipants = 5
             };
 
             context.Events.Add(footvalEvent);

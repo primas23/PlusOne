@@ -185,6 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Images\GoogleMapsMarkers\close.png" />
+    <Content Include="MyEvents.aspx" />
     <Content Include="EventTypeCreate.aspx" />
     <Content Include="EventCreate.aspx" />
     <Content Include="EventDetails.aspx" />
@@ -275,6 +276,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyEvents.aspx.cs">
+      <DependentUpon>MyEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyEvents.aspx.designer.cs">
+      <DependentUpon>MyEvents.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EventTypeCreate.aspx.cs">
       <DependentUpon>EventTypeCreate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
