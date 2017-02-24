@@ -40,6 +40,14 @@
       <HintPath>..\packages\Castle.Core.4.0.0\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Moq, Version=4.7.0.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\packages\Moq.4.7.0\lib\net45\Moq.dll</HintPath>
       <Private>True</Private>
@@ -49,6 +57,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web" />
     <Reference Include="WebFormsMvp, Version=1.4.5.0, Culture=neutral, PublicKeyToken=537f18701145dff0, processorArchitecture=MSIL">
       <HintPath>..\packages\WebFormsMvp.1.4.5.0\lib\WebFormsMvp.dll</HintPath>
@@ -68,19 +77,22 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="EventsMock\QueryableDbSetMock.cs" />
     <Compile Include="MVP\EventCreatePresenter\View_OnEventCreate.cs" />
     <Compile Include="MVP\EventCreatePresenter\View_OnGetEventTypes_Should.cs" />
     <Compile Include="MVP\EventDetailsPresenter\View_OnEventFormGetItems.cs" />
     <Compile Include="MVP\EventMyEventsPresenter\View_EventMyEventsPresenter.cs" />
     <Compile Include="MVP\EventSearchPresenter\View_OnEventSearchPresenter.cs" />
+    <Compile Include="MVP\Events\View_OnUpdateItem_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EventServicesTest.cs" />
+    <Compile Include="Services\EventTypeServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\PlusOne.Common\PlusOne.Common.csproj">
       <Project>{6B1457B4-C076-4473-848F-B052B48666F6}</Project>
@@ -89,6 +101,10 @@
     <ProjectReference Include="..\PlusOne.Data.Models\PlusOne.Data.Models.csproj">
       <Project>{C408266E-908C-4801-8DAB-5E6603132117}</Project>
       <Name>PlusOne.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlusOne.Data\PlusOne.Data.csproj">
+      <Project>{15D5A48B-68C7-48A9-ABC7-CFE5F2EFF7CB}</Project>
+      <Name>PlusOne.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\PlusOne.MVP\PlusOne.MVP.csproj">
       <Project>{B13CA39E-7545-4A32-B9A3-C6B34ED4B822}</Project>

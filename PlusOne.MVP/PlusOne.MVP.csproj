@@ -76,6 +76,10 @@
     <Compile Include="Search\SearchViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PlusOne.Common\PlusOne.Common.csproj">
+      <Project>{6b1457b4-c076-4473-848f-b052b48666f6}</Project>
+      <Name>PlusOne.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PlusOne.Data.Models\PlusOne.Data.Models.csproj">
       <Project>{C408266E-908C-4801-8DAB-5E6603132117}</Project>
       <Name>PlusOne.Data.Models</Name>

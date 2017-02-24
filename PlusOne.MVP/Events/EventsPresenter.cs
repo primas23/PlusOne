@@ -1,5 +1,5 @@
 ﻿using System;
-
+using PlusOne.Common;
 using WebFormsMvp;
 
 using PlusOne.Data.Models;
@@ -28,8 +28,7 @@ namespace PlusOne.MVP.Events
             Event evnetToUpdatEvent = this._eventService.GetById(e.Id);
             if (evnetToUpdatEvent == null)
             {
-                // The item wasn't found
-                this.View.ModelState.AddModelError(string.Empty, string.Format("Item with id {0} was not found", e.Id));
+                this.View.ModelState.AddModelError(string.Empty, string.Format(Constants.ItemWithIdNotFoundFormat, e.Id));
                 return;
             }
 
