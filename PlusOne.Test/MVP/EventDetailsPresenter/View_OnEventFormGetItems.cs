@@ -1,11 +1,11 @@
 ﻿using System;
+
 using Moq;
 using NUnit.Framework;
-using PlusOne.MVP.EventCreate;
+
 using PlusOne.Services;
 using PlusOne.Data.Models;
 using PlusOne.MVP.EventDetails;
-using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
 namespace PlusOne.Test.MVP.EventCreatePresenter
 {

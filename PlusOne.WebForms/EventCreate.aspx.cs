@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Linq;
+
 using Microsoft.AspNet.Identity;
-using PlusOne.MVP.EventCreate;
+
 using WebFormsMvp;
 using WebFormsMvp.Web;
+
+using PlusOne.MVP.EventCreate;
+
 
 namespace PlusOne.WebForms
 {
@@ -23,29 +27,32 @@ namespace PlusOne.WebForms
 
         protected void SaveButton_Click(object sender, EventArgs e)
         {
-            string location = this.LocationName.Text;
-            string startDate = this.StartDate.Text;
-            string endDate = this.EndDate.Text;
-            string latitude = this.Latitude.Text;
-            string longitude = this.Longitude.Text;
-            string locationAddress = this.LocationAddress.Text;
-            string eventTypedDateId = this.DropDownListEventType.Text;
+            if (Page.IsValid)
+            {
+                string location = this.LocationName.Text;
+                string startDate = this.StartDate.Text;
+                string endDate = this.EndDate.Text;
+                string latitude = this.Latitude.Text;
+                string longitude = this.Longitude.Text;
+                string locationAddress = this.LocationAddress.Text;
+                string eventTypedDateId = this.DropDownListEventType.Text;
 
-            // TODO: Validate
+                // TODO: Validate
 
-            this.Model.EventTypeId = Guid.Parse(eventTypedDateId);
-            this.Model.Start = DateTime.Parse(startDate);
-            this.Model.End = DateTime.Parse(endDate);
-            this.Model.LocationName = location;
-            this.Model.Latitude = double.Parse(latitude);
-            this.Model.Longitude = double.Parse(longitude);
-            this.Model.LocationAddress = locationAddress;
+                this.Model.EventTypeId = Guid.Parse(eventTypedDateId);
+                this.Model.Start = DateTime.Parse(startDate);
+                this.Model.End = DateTime.Parse(endDate);
+                this.Model.LocationName = location;
+                this.Model.Latitude = double.Parse(latitude);
+                this.Model.Longitude = double.Parse(longitude);
+                this.Model.LocationAddress = locationAddress;
 
-            Guid userId = Guid.Parse(this.Context.User.Identity.GetUserId());
+                Guid userId = Guid.Parse(this.Context.User.Identity.GetUserId());
 
-            this.OnEventCreate?.Invoke(this, new IdEventArgs() {Id = userId});
+                this.OnEventCreate?.Invoke(this, new IdEventArgs() { Id = userId });
 
-            Response.Redirect(string.Format("~/eventdetails.aspx?id={0}", this.Model.EventTypeId));
+                Response.Redirect(string.Format("~/eventdetails.aspx?id={0}", this.Model.EventTypeId));
+            }
         }
     }
 }

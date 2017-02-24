@@ -13,9 +13,7 @@ namespace PlusOne.WebForms
         protected void SaveButton_Click(object sender, EventArgs e)
         {
             string eventTypeName = this.EventType.Text;
-
-            // TODO: Validate
-
+            
             this.OnEventTypeCreate?.Invoke(this, new NameEventArgs() { Name = eventTypeName });
 
             Response.Redirect("~/eventcreate.aspx");

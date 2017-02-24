@@ -184,6 +184,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.html" />
     <Content Include="Admin\EditEvents.aspx" />
     <Content Include="Content\Images\GoogleMapsMarkers\close.png" />
     <Content Include="MyEvents.aspx" />

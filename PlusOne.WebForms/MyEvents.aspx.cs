@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Linq;
+
+using WebFormsMvp;
+using WebFormsMvp.Web;
+
 using Microsoft.AspNet.Identity;
+
 using PlusOne.Data.Models;
 using PlusOne.MVP.EventCreate;
 using PlusOne.MVP.Events;
 using PlusOne.MVP.MyEvents;
-using WebFormsMvp;
-using WebFormsMvp.Web;
 
 namespace PlusOne.WebForms
 {

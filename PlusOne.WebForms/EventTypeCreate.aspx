@@ -11,6 +11,13 @@
             <asp:Label runat="server" AssociatedControlID="EventType" CssClass="col-md-2 control-label">Event Type</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="EventType" CssClass="form-control" />
+                <asp:RequiredFieldValidator
+                    ID="RequiredFieldValidator4"
+                    runat="server"
+                    ErrorMessage="Event Type cannot be blank"
+                    ControlToValidate="EventType"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
             </div>
         </div>
 

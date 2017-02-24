@@ -35,7 +35,7 @@ namespace PlusOne.Services
         {
             return this._context.Events
                 .Where(e => e.IsDeleted == false)
-                .Where(e => e.Participants.Any(p => p.Id == userId.ToString()))
+                .Where(e => e.Participants.Any(p => p.Id == userId.ToString()) || e.OwnerId == userId.ToString())
                 .OrderBy(e => e.Start);
         }
 

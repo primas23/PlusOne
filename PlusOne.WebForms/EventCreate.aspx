@@ -7,17 +7,17 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div style="width: 750px; height: 500px;" id="map"></div>
-    
+
     <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="DropDownListEventType" CssClass="col-md-2 control-label">Event Type</asp:Label>
-            <div class="col-md-10">
-                <asp:DropDownList ID="DropDownListEventType" 
-                    runat="server"
-                    DataValueField="Id"
-                    DataTextField="Name">
-                </asp:DropDownList>
-            </div>
+        <asp:Label runat="server" AssociatedControlID="DropDownListEventType" CssClass="col-md-2 control-label">Event Type</asp:Label>
+        <div class="col-md-10">
+            <asp:DropDownList ID="DropDownListEventType"
+                runat="server"
+                DataValueField="Id"
+                DataTextField="Name">
+            </asp:DropDownList>
         </div>
+    </div>
 
     <div class="form-horizontal">
         <div class="form-group">
@@ -31,6 +31,13 @@
             <asp:Label runat="server" AssociatedControlID="StartDate" CssClass="col-md-2 control-label">Start Date</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="StartDate" TextMode="Date" name="StartDate" class="col-md-3"></asp:TextBox>
+                <asp:RequiredFieldValidator
+                    ID="RequiredFieldValidator5"
+                    runat="server"
+                    ErrorMessage="Start Date cannot be blank"
+                    ControlToValidate="StartDate"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
             </div>
         </div>
 
@@ -38,6 +45,13 @@
             <asp:Label runat="server" AssociatedControlID="EndDate" CssClass="col-md-2 control-label">End Date</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="EndDate" TextMode="Date" name="StartDate" class="col-md-3"></asp:TextBox>
+                <asp:RequiredFieldValidator
+                    ID="RequiredFieldValidator4"
+                    runat="server"
+                    ErrorMessage="End Date cannot be blank"
+                    ControlToValidate="EndDate"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
             </div>
         </div>
 
@@ -45,13 +59,28 @@
             <asp:Label runat="server" AssociatedControlID="Latitude" CssClass="col-md-2 control-label">Latitude</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Latitude" CssClass="form-control" />
+                <asp:RequiredFieldValidator
+                    ID="RequiredFieldValidator1"
+                    runat="server"
+                    ErrorMessage="Latitude cannot be blank"
+                    ControlToValidate="Latitude"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
             </div>
+            
         </div>
 
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="Longitude" CssClass="col-md-2 control-label">Longitude</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Longitude" CssClass="form-control" />
+                <asp:RequiredFieldValidator
+                    ID="RequiredFieldValidator2"
+                    runat="server"
+                    ErrorMessage="Longitude cannot be blank"
+                    ControlToValidate="Longitude"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
             </div>
         </div>
 
@@ -59,9 +88,16 @@
             <asp:Label runat="server" AssociatedControlID="LocationAddress" CssClass="col-md-2 control-label">Location address</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="LocationAddress" CssClass="form-control" />
+                <asp:RequiredFieldValidator
+                    ID="RequiredFieldValidator3"
+                    runat="server"
+                    ErrorMessage="Location Address cannot be blank"
+                    ControlToValidate="LocationAddress"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
             </div>
         </div>
-        
+
     </div>
 
     <asp:LinkButton runat="server" ID="SaveButton" OnClick="SaveButton_Click" CssClass="btn  btn-primary" Text="Save"></asp:LinkButton>
