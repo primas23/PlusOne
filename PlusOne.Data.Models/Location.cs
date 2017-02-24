@@ -13,6 +13,8 @@ namespace PlusOne.Data.Models
 
         public string Name { get; set; }
 
+        public bool IsDeleted { get; set; }
+
         public double Latitude { get; set; }
 
         public double Longitude { get; set; }

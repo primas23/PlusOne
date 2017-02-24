@@ -38,13 +38,17 @@ namespace PlusOne.Data.Migrations
             var footbalLoc = new Location()
             {
                 Name = "U nas",
-                Address = "nor 4"
+                Address = "ul. \"Anton Naydenov\" 12, 1700 Sofia, Bulgaria",
+                Latitude = 42.65000430000001,
+                Longitude = 23.341308099999992,
             };
 
             var golflLoc = new Location()
             {
-                Name = "U tqh",
-                Address = "asdasd 4"
+                Name = "ulitsa \"Akademik Boris Stefanov\" 14, 1700 Sofia, Bulgaria",
+                Address = "asdasd 4",
+                Latitude = 42.6483173,
+                Longitude = 23.341426700000056,
             };
 
             context.Locations.Add(golflLoc);

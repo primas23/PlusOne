@@ -14,6 +14,8 @@ namespace PlusOne.Data.Models
 
         public string Name { get; set; }
 
+        public bool IsDeleted { get; set; }
+
         public virtual ICollection<Event> Events { get; set; }
 
     }
