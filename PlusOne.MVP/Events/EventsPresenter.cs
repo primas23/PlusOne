@@ -1,5 +1,8 @@
 ﻿using PlusOne.Services;
 using System;
+using PlusOne.Data.Models;
+using PlusOne.MVP.EditEvents;
+using PlusOne.MVP.EventCreate;
 using WebFormsMvp;
 
 namespace PlusOne.MVP.Events
@@ -14,6 +17,36 @@ namespace PlusOne.MVP.Events
             this._eventService = eventService;
 
             this.View.OnEventsGetData += this.View_OnEventsGetData;
+            this.View.OnGetAllEventsData += this.View_OnGetAllEventsData;
+            this.View.OnDeleteMethod += this.View_OnDeleteMethod;
+            this.View.OnUpdateMethod += this.View_OnUpdateMethod;
+        }
+
+        private void View_OnUpdateMethod(object sender, IdEventArgs e)
+        {
+            Event evnetToUpdatEvent = this._eventService.GetById(e.Id);
+            if (evnetToUpdatEvent == null)
+            {
+                // The item wasn't found
+                this.View.ModelState.AddModelError("", String.Format("Item with id {0} was not found", e.Id));
+                return;
+            }
+
+            this.View.TryUpdateModel(evnetToUpdatEvent);
+            if (this.View.ModelState.IsValid)
+            {
+                this._eventService.UpdateEvent(evnetToUpdatEvent);
+            }
+        }
+
+        private void View_OnDeleteMethod(object sender, IdEventArgs e)
+        {
+            this._eventService.DeleteEvent(e.Id);
+        }
+
+        private void View_OnGetAllEventsData(object sender, EventArgs e)
+        {
+            this.View.Model.Events = this._eventService.GetAllEventsInDataBase();
         }
 
         private void View_OnEventsGetData(object sender, EventArgs e)

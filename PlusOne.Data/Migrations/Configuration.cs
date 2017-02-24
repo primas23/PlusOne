@@ -1,6 +1,8 @@
 using System;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using PlusOne.Data.Models;
 
 namespace PlusOne.Data.Migrations
@@ -20,6 +22,13 @@ namespace PlusOne.Data.Migrations
                 return;
             }
 
+            this.SeedUsers(context);
+            this.SeedRoles(context);
+            this.SeedData(context);
+        }
+
+        private void SeedData(PlusOneDbContext context)
+        {
             var futbolType = new EventType()
             {
                 Id = Guid.NewGuid(),
@@ -32,7 +41,14 @@ namespace PlusOne.Data.Migrations
                 Name = "Golf"
             };
 
+            var chessType = new EventType()
+            {
+                Id = Guid.NewGuid(),
+                Name = "Chess"
+            };
+
             context.EventTypes.Add(futbolType);
+            context.EventTypes.Add(chessType);
             context.EventTypes.Add(golfType);
 
             var footbalLoc = new Location()
@@ -45,13 +61,22 @@ namespace PlusOne.Data.Migrations
 
             var golflLoc = new Location()
             {
-                Name = "ulitsa \"Akademik Boris Stefanov\" 14, 1700 Sofia, Bulgaria",
-                Address = "asdasd 4",
+                Address = "ulitsa \"Akademik Boris Stefanov\" 14, 1700 Sofia, Bulgaria",
+                Name = "asdasd 4",
                 Latitude = 42.6483173,
                 Longitude = 23.341426700000056,
             };
 
+            var chesslLoc = new Location()
+            {
+                Address = "ulitsa \"Akademik Asd Stefanov\" 14, 1700 Pleven, Bulgaria",
+                Name = "asdasd 4",
+                Latitude = 52.6483173,
+                Longitude = 33.341426700000056,
+            };
+
             context.Locations.Add(golflLoc);
+            context.Locations.Add(chesslLoc);
             context.Locations.Add(footbalLoc);
 
 
@@ -73,10 +98,63 @@ namespace PlusOne.Data.Migrations
                 MaxParticipants = 5
             };
 
+            var chessEvent = new Event()
+            {
+                Location = chesslLoc,
+                Start = DateTime.Now,
+                End = DateTime.Now.AddDays(2),
+                Type = chessType,
+                MaxParticipants = 2
+            };
+
             context.Events.Add(footvalEvent);
             context.Events.Add(golfEvent);
 
+            context.SaveChanges();
+        }
 
+        private void SeedUsers(PlusOneDbContext context)
+        {
+            if (context.Users.Any())
+            {
+                return;
+            }
+
+            var admin = new ApplicationUser()
+            {
+                UserName = "admin@admin.bg",
+                Email = "admin@admin.bg",
+                PasswordHash = new PasswordHasher().HashPassword("admin"),
+                LockoutEnabled = true,
+                SecurityStamp = Guid.NewGuid().ToString()
+            };
+           
+
+            context.Users.Add(admin);
+
+            context.SaveChanges();
+        }
+
+        private void SeedRoles(PlusOneDbContext context)
+        {
+            if (context.Roles.Any())
+            {
+                return;
+            }
+
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+
+            roleManager.Create(new IdentityRole("Admin"));
+            
+            context.SaveChanges();
+
+            var admin = context.Users.FirstOrDefault(u => u.Email == "admin@admin.bg");
+            if (admin != null)
+            {
+                userManager.AddToRole(admin.Id, "Admin");
+            }
+            
             context.SaveChanges();
         }
     }

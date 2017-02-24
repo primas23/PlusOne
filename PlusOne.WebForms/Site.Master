@@ -51,9 +51,12 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
+
                         <li><a runat="server" href="~/events">Events</a></li>
                         <li><a runat="server" href="~/eventcreate">Create Event</a></li>
                         <li><a runat="server" href="~/eventtypecreate">Create Event Type</a></li>
+                        
+                        <li><a runat="server" id="admin_edit" href="~/admin/editevents">Edit Events</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>

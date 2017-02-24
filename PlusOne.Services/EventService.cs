@@ -18,18 +18,53 @@ namespace PlusOne.Services
 
         public IQueryable<Event> GetAllEventsSortedByStartDate()
         {
-            return this._context.Events.OrderBy(e => e.Start).Include(e => e.Type);
+            return this._context.Events
+                .Where(e => e.IsDeleted == false)
+                .OrderBy(e => e.Start)
+                .Include(e => e.Type);
+        }
+
+        public IQueryable<Event> GetAllEventsInDataBase()
+        {
+            return this._context.Events
+                .OrderBy(e => e.Start)
+                .Include(e => e.Type);
         }
 
         public IQueryable<Event> GetAllMyEventsSortedByStartDate(Guid userId)
         {
-            return this._context.Events.Where(e => e.Participants.Any(p => p.Id == userId.ToString())).OrderBy(e => e.Start);
+            return this._context.Events
+                .Where(e => e.IsDeleted == false)
+                .Where(e => e.Participants.Any(p => p.Id == userId.ToString()))
+                .OrderBy(e => e.Start);
         }
 
         public IQueryable<Event> GetAllEventsBySearchParams(string queryType, string queryLocation, DateTime queryStart, DateTime queryEnd)
         {
-            // TODO: Add logic
-            return this._context.Events.OrderBy(e => e.Start);
+            IQueryable<Event> events = this._context.Events
+                .OrderBy(e => e.Start);
+
+            if (string.IsNullOrEmpty(queryType) == false)
+            {
+                events = events.Where(e => e.Type.Name.Contains(queryType));
+            }
+
+            if (string.IsNullOrEmpty(queryLocation) == false)
+            {
+                events = events.Where(e => e.Location.Address.Contains(queryLocation));
+            }
+
+            if (queryStart > DateTime.MinValue.AddMinutes(1))
+            {
+                events = events.Where(e => e.Start >= queryStart);
+            }
+
+            if (queryEnd < DateTime.MaxValue.AddMinutes(-1))
+            {
+                events = events.Where(e => e.End <= queryEnd);
+            }
+
+            return events;
         }
 
         public Event GetById(Guid? id)
@@ -69,5 +104,24 @@ namespace PlusOne.Services
 
             return _context.SaveChanges();
         }
+
+        public int DeleteEvent(Guid id)
+        {
+            Event eventTodelete = this._context.Events.FirstOrDefault(e => e.Id == id);
+
+            eventTodelete.IsDeleted = true;
+
+            return this._context.SaveChanges();
+        }
+
+        public int UpdateEvent(Event evnetToUpdatEvent)
+        {
+            var entry = this._context.Entry(evnetToUpdatEvent);
+            entry.State = EntityState.Modified;
+
+            return this._context.SaveChanges();
+        }
     }
+
+
 }

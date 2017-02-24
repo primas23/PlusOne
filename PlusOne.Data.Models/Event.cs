@@ -12,7 +12,7 @@ namespace PlusOne.Data.Models
             this.CreatedOn = DateTime.Now;
         }
 
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
         public DateTime Start { get; set; }
 

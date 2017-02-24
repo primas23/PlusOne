@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 using PlusOne.Data.Models;
+using PlusOne.MVP.EditEvents;
+using PlusOne.MVP.EventCreate;
 using PlusOne.MVP.Events;
 using WebFormsMvp;
 using WebFormsMvp.Web;
@@ -11,6 +13,12 @@ namespace PlusOne.WebForms
     public partial class Events : MvpPage<EventsViewModel>, IEventsView
     {
         public event EventHandler OnEventsGetData;
+
+        public event EventHandler OnGetAllEventsData;
+
+        public event EventHandler<IdEventArgs> OnDeleteMethod;
+
+        public event EventHandler<IdEventArgs> OnUpdateMethod;
 
         public IQueryable<Event> ListViewEvents_GetData()
         {

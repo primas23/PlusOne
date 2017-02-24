@@ -9,6 +9,8 @@ namespace PlusOne.Services
     {
         IQueryable<Event> GetAllEventsSortedByStartDate();
 
+        IQueryable<Event> GetAllEventsInDataBase();
+
         IQueryable<Event> GetAllMyEventsSortedByStartDate(Guid userId);
 
         IQueryable<Event> GetAllEventsBySearchParams(string queryType, string queryLocation, DateTime queryStart, DateTime queryEnd);
@@ -20,5 +22,9 @@ namespace PlusOne.Services
         int AddParticipant(Guid eventId, string userId);
 
         int RemoveParticipant(Guid eventId, string userId);
+
+        int DeleteEvent(Guid id);
+
+        int UpdateEvent(Event evnetToUpdatEvent);
     }
 }

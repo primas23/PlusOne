@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using PlusOne.Data.Models;
 
 namespace PlusOne.Data
@@ -12,6 +13,8 @@ namespace PlusOne.Data
         IDbSet<Location> Locations { get; set; }
 
         IDbSet<ApplicationUser> Users { get; set; }
+
+        DbEntityEntry Entry(object entity);
 
         int SaveChanges();
     }
