@@ -5,12 +5,12 @@ namespace PlusOne.Data
 {
     public interface IPlusOneDbContext
     {
-        IDbSet<City> Cities { get; set; }
-
         IDbSet<Event> Events { get; set; }
 
         IDbSet<EventType> EventTypes { get; set; }
 
         IDbSet<Location> Locations { get; set; }
+
+        int SaveChanges();
     }
 }

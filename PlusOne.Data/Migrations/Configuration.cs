@@ -37,37 +37,22 @@ namespace PlusOne.Data.Migrations
 
             var footbalLoc = new Location()
             {
-                Id = Guid.NewGuid(),
-                City = new City()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Sofia"
-                },
                 Name = "U nas",
-                Address = "nor 4",
-                MapUrl = "kjausdholidahfkljjalkjsd"
+                Address = "nor 4"
             };
 
             var golflLoc = new Location()
             {
-                Id = Guid.NewGuid(),
-                City = new City()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Pleven"
-                },
                 Name = "U tqh",
-                Address = "asdasd 4",
-                MapUrl = "asdasd"
+                Address = "asdasd 4"
             };
 
             context.Locations.Add(golflLoc);
             context.Locations.Add(footbalLoc);
-            
+
 
             var footvalEvent = new Event()
             {
-                Id = Guid.NewGuid(),
                 Location = footbalLoc,
                 Start = DateTime.Now,
                 End = DateTime.Now.AddDays(1),
@@ -76,7 +61,6 @@ namespace PlusOne.Data.Migrations
 
             var golfEvent = new Event()
             {
-                Id = Guid.NewGuid(),
                 Location = golflLoc,
                 Start = DateTime.Now,
                 End = DateTime.Now.AddDays(2),

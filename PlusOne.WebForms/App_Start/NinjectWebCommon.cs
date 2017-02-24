@@ -71,7 +71,9 @@ namespace PlusOne.WebForms.App_Start
             PresenterBinder.Factory = kernel.Get<IPresenterFactory>();
 
             kernel.Bind<IPlusOneDbContext>().To<PlusOneDbContext>();
+
             kernel.Bind<IEventService>().To<EventService>();
+            kernel.Bind<IEventTypeService>().To<EventTypeService>();
         }        
     }
 }

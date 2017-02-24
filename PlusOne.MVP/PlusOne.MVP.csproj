@@ -30,8 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,6 +49,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventCreate\IdEventArgs.cs" />
+    <Compile Include="EventCreate\EventCreateEventArgs.cs" />
+    <Compile Include="EventCreate\EventCreatePresenter.cs" />
+    <Compile Include="EventCreate\EventCreateViewModel.cs" />
+    <Compile Include="EventCreate\IEventCreateView.cs" />
     <Compile Include="EventDetails\EventDetailsPresenter.cs" />
     <Compile Include="EventDetails\EventDetailsViewModel.cs" />
     <Compile Include="EventDetails\FormGetItemsEventArgs.cs" />
@@ -51,6 +61,10 @@
     <Compile Include="Events\EventsPresenter.cs" />
     <Compile Include="Events\EventsViewModel.cs" />
     <Compile Include="Events\IEventsView.cs" />
+    <Compile Include="EventType\EventTypeCreatePresenter.cs" />
+    <Compile Include="EventType\EventTypeCreateViewModel.cs" />
+    <Compile Include="EventType\IEventTypeCreateView.cs" />
+    <Compile Include="EventType\NameEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Search\ISearchView.cs" />
     <Compile Include="Search\SearchEventArgs.cs" />

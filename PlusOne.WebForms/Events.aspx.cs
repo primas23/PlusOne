@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using PlusOne.Data.Models;
 using PlusOne.MVP.Events;
 using WebFormsMvp;
@@ -12,7 +13,7 @@ namespace PlusOne.WebForms
     {
         public event EventHandler OnEventsGetData;
 
-        public IList<Event> ListViewEvents_GetData()
+        public IQueryable<Event> ListViewEvents_GetData()
         {
             this.OnEventsGetData?.Invoke(this, null);
 

@@ -50,7 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EventService.cs" />
+    <Compile Include="EventTypeService.cs" />
     <Compile Include="IEventService.cs" />
+    <Compile Include="IEventTypeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

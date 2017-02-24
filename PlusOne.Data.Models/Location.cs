@@ -4,14 +4,19 @@ namespace PlusOne.Data.Models
 {
     public class Location
     {
-        public Guid Id { get; set; }
+        public Location()
+        {
+            this.Id = Guid.NewGuid();
+        }
+
+        public Guid Id { get; private set; }
 
         public string Name { get; set; }
 
-        public virtual City City { get; set; }
+        public double Latitude { get; set; }
+
+        public double Longitude { get; set; }
 
         public string Address { get; set; }
-
-        public string MapUrl { get; set; }
     }
 }

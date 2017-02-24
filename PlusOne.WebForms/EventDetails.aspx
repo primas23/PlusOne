@@ -17,14 +17,15 @@
                 <p><i>end <%#: Item.End %></i></p>
             </header>
             <div>
-                <p>location <%#: Item.Location %></p>
+                <p>location <%#: Item.Location.Address %></p>
+                <a class="btn btn-default" target="blank" href="http://maps.google.com/?q=<%# Item.Location.Latitude %>,<%# Item.Location.Longitude %>">Show on map</a>
             </div>
 
         </ItemTemplate>
     </asp:FormView>
 
     <div class="back-link">
-        <a href="/events">Back to events</a>
+        <a class="btn btn-primary" href="/events">Back to events</a>
     </div>
 
 </asp:Content>

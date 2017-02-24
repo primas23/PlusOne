@@ -10,9 +10,7 @@ namespace PlusOne.Data
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-
-        public IDbSet<City> Cities { get; set; }
-
+        
         public IDbSet<Event> Events{ get; set; }
 
         public IDbSet<EventType> EventTypes { get; set; }
