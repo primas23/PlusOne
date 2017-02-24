@@ -6,6 +6,6 @@ namespace PlusOne.MVP.Events
 {
     public class EventsViewModel
     {
-        public IQueryable<Event> Events { get; set; }
+        public virtual IQueryable<Event> Events { get; set; }
     }
 }

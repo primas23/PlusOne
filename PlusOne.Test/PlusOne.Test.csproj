@@ -71,6 +71,8 @@
     <Compile Include="MVP\EventCreatePresenter\View_OnEventCreate.cs" />
     <Compile Include="MVP\EventCreatePresenter\View_OnGetEventTypes_Should.cs" />
     <Compile Include="MVP\EventDetailsPresenter\View_OnEventFormGetItems.cs" />
+    <Compile Include="MVP\EventMyEventsPresenter\View_EventMyEventsPresenter.cs" />
+    <Compile Include="MVP\EventSearchPresenter\View_OnEventSearchPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

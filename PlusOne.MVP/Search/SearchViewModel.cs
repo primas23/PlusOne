@@ -6,6 +6,6 @@ namespace PlusOne.MVP.Search
 {
     public class SearchViewModel
     {
-        public IQueryable<Event> Events { get; set; }
+        public virtual IQueryable<Event> Events { get; set; }
     }
 }
